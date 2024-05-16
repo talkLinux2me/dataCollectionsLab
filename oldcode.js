@@ -144,3 +144,26 @@ const averageAge = totalAge / csvData.length;
 
 // Logging the average age
 console.log("Average Age:", averageAge);
+
+/**PART 5
+ * As a final task, transform the final set of data back into CSV format.
+ */
+
+// Assuming csvData is the array of objects modified earlier
+
+// Constructing the CSV string
+let csvResult = '';
+
+// Adding the header row
+const headerRow = Object.keys(csvData[0]).join(',');
+csvResult += headerRow + '\n';
+
+// Adding each row of data
+csvData.forEach(obj => {
+    const values = Object.values(obj).join(',');
+    csvResult += values + '\n';
+});
+
+// Logging the CSV result
+console.log("CSV Result:");
+console.log(csvResult);
